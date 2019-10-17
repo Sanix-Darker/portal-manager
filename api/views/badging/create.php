@@ -16,7 +16,7 @@
 			SELECT BADGING_ID
 			FROM `badging`
 			ORDER BY BADGING_ID DESC
-			LIMIT 2 -- keep this many records
+			LIMIT 1000 -- keep this many records
 		  ) foo
 		)')->execute();
 
