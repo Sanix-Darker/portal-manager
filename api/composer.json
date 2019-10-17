@@ -1,0 +1,10 @@
+{
+    "name": "REST-PHP-API",
+    "type": "library",
+    "description": "A nice from scratch PHP's API",
+    "keywords": ["php","mysql","database"],
+    "license": "MIT",
+    "require": {
+        "php": ">=5.6"
+    }
+}

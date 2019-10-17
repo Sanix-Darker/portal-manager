@@ -1,0 +1,21 @@
+Options +FollowSymlinks 
+Options -MultiViews
+Options -Indexes
+
+RewriteEngine On
+
+RewriteRule (.*)/$ $1 [L,R=301]
+
+RewriteBase /orm2/
+
+RewriteCond %{REQUEST_FILENAME} !-f
+
+RewriteRule ^([a-zA-Z0-9]+)$ index.php?page=$1 [NC,L]
+
+RewriteRule ^([a-zA-Z0-9]+)/([^.]+)$ index.php?page=$1&cible=$2 [NC,L]
+
+RewriteRule ^([a-zA-Z0-9]+)/([a-zA-Z0-9]+)/([a-zA-Z0-9]+)$ index.php?page=$1&cible=$2&action=$3 [NC,L]
+
+RewriteRule ^([a-zA-Z0-9]+)/([a-zA-Z0-9]+)/([a-zA-Z0-9]+)/([^.]+)$ index.php?page=$1&cible=$2&action=$3&subaction=$4 [NC,L]
+
+#RewriteRule ^([^.]+?)/?$ $1.php [L]
