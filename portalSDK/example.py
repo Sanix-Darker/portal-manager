@@ -1,4 +1,4 @@
-from portalSDK import portalSDK
+from PortalSDK import PortalSDK
 
 # We set the Token
 TOKEN ="2nSftf0JYKAQ52qz6RLRfoWmPqiSPmnRFI4C3fOiMZ7RKE5LVOcv1Eb7QWLOqQikrh2cZX_zZgQJxKgbIDHGjY4Ko4LDex1vqyNu";
@@ -8,7 +8,7 @@ API = "http://127.0.0.1:80/php/portal/api/";
 # We instantiate the portalSDK
 #? Put True to see portalSDK logs or False to hide them
 #? As default is False
-pSDK = portalSDK(API, TOKEN, DEBUG=False)
+pSDK = PortalSDK(API, TOKEN, DEBUG=False)
 
 # -----------------------------------------------------------------------------------
 

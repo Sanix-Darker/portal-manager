@@ -4,12 +4,15 @@
 # A simple SDk to interact with the portal API
 #
 
-from os import system
-import json
+from json import loads as jsonloads
+from json import dumps as jsondumps
 try: import requests
 except Exception as e: print("[+] requests is not installed, please install it!")
 
-class portalSDK:
+# ---
+# MAIN CLASS PortalSDK
+# ---------
+class PortalSDK:
 
     def __init__(self, API, TOKEN, DEBUG=False):
         self.API = API
@@ -24,7 +27,6 @@ class portalSDK:
 
     def logg(self, _object):
         if self.DEBUG == True: print("\n"+_object)
-
 
 
     def req(self, host, method, data = {}):
@@ -67,14 +69,14 @@ class portalSDK:
         """
         data_to_send = {
             "matricule": matricule,
-            "info": json.dumps(student_info),
+            "info": jsondumps(student_info),
             "status": status
         }
         badging_link = self.API+"?page=badging&token="+self.TOKEN+"&cible=create"
         response = self.req(badging_link, "post", data_to_send)
         self.logg("[+] Response : "+str(response))
 
-        return json.loads(str(response))
+        return jsonloads(str(response))
 
 
 
@@ -114,7 +116,7 @@ class portalSDK:
         response = self.req(command_link, "get")
         self.logg("[+] Response : "+str(response))
 
-        return json.loads(str(response))["result"]
+        return jsonloads(str(response))["result"]
 
 
 
@@ -136,7 +138,7 @@ class portalSDK:
         response = self.req(update_command_status_link, "post", data_to_send)
         self.logg("[+] Response : "+str(response))
 
-        return json.loads(str(response))
+        return jsonloads(str(response))
 
     def update_command_status(self, status, command_address):
         """[summary]

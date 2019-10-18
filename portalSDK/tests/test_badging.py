@@ -7,7 +7,7 @@ from sys import path as syspath
 # moving the path outside of the current dir
 syspath.insert(1, ospath.join(syspath[0], '..'))
 
-from portalSDK import portalSDK
+from PortalSDK import PortalSDK
 
 
 # We set the Token
@@ -18,7 +18,7 @@ API = "http://127.0.0.1:80/php/portal/api/";
 # We instantiate the portalSDK
 #? Put True to see portalSDK logs or False to hide them
 #? As default is False
-pSDK = portalSDK(API, TOKEN, DEBUG=False)
+pSDK = PortalSDK(API, TOKEN, DEBUG=False)
 
 #
 #-------------------------------------------
