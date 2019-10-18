@@ -17,6 +17,10 @@ class portalSDK:
         self.DEBUG = DEBUG
 
 
+    def login(self):
+        # Une methode potentiellement pour le login dans un futur
+        pass
+
 
     def logg(self, _object):
         if self.DEBUG == True: print("\n"+_object)
