@@ -18,6 +18,8 @@ API = "http://127.0.0.1:80/php/portal/api/";
 #? As default is False
 pSDK = portalSDK(API, TOKEN, DEBUG=False)
 
+# -----------------------------------------------------------------------------------
+
 #
 #-------------------------------------------
 #| __ )  / \  |  _ \ / ___|_ _| \ | |/ ___|
@@ -42,6 +44,8 @@ student_info = {
 pSDK.send_badging(matricule, status, student_info)
 
 
+# -----------------------------------------------------------------------------------
+
 
 #
 #-----------------------------------------------------
@@ -52,11 +56,27 @@ pSDK.send_badging(matricule, status, student_info)
 #-----------------------------------------------------
 #
 
-#TO get the list of commands setted on the server
-# To get the list of commands
+# - TO get the list of commands setted on the server
+#
+# We get the list of commands
 command_list = pSDK.get_commands()
 for index, command in enumerate(command_list):
     print(str(index+1)+"-) "+ str(command))
+
+# ---------------------
+
+
+# - TO Update the status of a specific command
+#
+# We set the address of the portal
+command_address = "72.45.67.87"
+# We set the status
+status = "OK"
+# We update the status in the API
+pSDK.update_command_status(status, command_address)
+
+# -----------------------------------------------------------------------------------
+
 ```
 
 ## OUTPUT
