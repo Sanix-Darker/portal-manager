@@ -61,7 +61,7 @@ for index, command in enumerate(command_list):
 
 ## OUTPUT
 
-This is an output example :
+This is an output of example.py :
 ```shell
 -------------------------------------------------------
 --       BADGING PROCESS STARTED              ---------
