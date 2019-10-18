@@ -82,14 +82,21 @@ You can run theese command for testing:
 ```shell
 cd tests
 # A complete implementation is available on ./example.py
-# python example.py
+python example.py
 
-# To test Badging system
+# To test Badging system:
+# cd to the tests directory
+cd tests
+# Hit this command
 python test_badging.py
 
-# To test commands interaction system
-python test_badging.py
+# To test commands interactions system:
+# cd to the tests directory
+cd tests
+# Hit this command
+python test_command.py
 ```
+
 ## Author
 
 - Sanix-darker

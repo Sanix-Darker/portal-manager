@@ -87,7 +87,7 @@ class portalSDK:
             student_info {[dict]} -- [Student informations]
         """
         print("-------------------------------------------------------")
-        print("--       BADGING PROCESS STARTED              ---------")
+        print("--------       SENDING BADGING PROCESS        ---------")
         print("-------------------------------------------------------")
         badging_response = self.badging_process(matricule, status, student_info)
 
@@ -107,7 +107,7 @@ class portalSDK:
             [dict] -- [Anarray of commands]
         """
         print("-------------------------------------------------------")
-        print("--       GETTING COMMAND PROCESS STARTED      ---------")
+        print("-----       GETTING COMMAND LIST PROCESS      ---------")
         print("-------------------------------------------------------")
         self.logg("[+] Fetching commands")
         command_link = self.API+"?page=command&token="+self.TOKEN
@@ -146,7 +146,7 @@ class portalSDK:
             command_address {[type]} -- [description]
         """
         print("-------------------------------------------------------")
-        print("--      UPDATE COMMAND STATUS PROCESS STARTED ---------")
+        print("---------     SENDING COMMAND STATUS          ---------")
         print("-------------------------------------------------------")
         update_response = self.send_command_status(status, command_address)
 

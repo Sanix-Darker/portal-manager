@@ -24,6 +24,7 @@ pSDK = portalSDK(API, TOKEN, DEBUG=False)
 #-----------------------------------------------------
 #
 
+#
 # - TO get the list of commands setted on the server
 #
 # We get the list of commands
@@ -32,6 +33,7 @@ for index, command in enumerate(command_list):
     print(str(index+1)+"-) "+ str(command))
 
 
+#
 # - TO Update the status of a specific command
 #
 # We set the address of the portal
