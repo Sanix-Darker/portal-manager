@@ -1,4 +1,5 @@
 import time
+from random import randrange
 from data_for_test import data_for_test
 
 from os import path as ospath
@@ -29,8 +30,8 @@ pSDK = portalSDK(API, TOKEN, DEBUG=False)
 #
 
 for student in data_for_test:
-    print("-----------------------------------------")
-    time.sleep(7)
+    print("\n-")
+    time.sleep(randrange(10)) # A timer randomly between 1 to 10
     # TO send a Badging to the server :
     # We set the matricule
     matricule = student["matricule"]

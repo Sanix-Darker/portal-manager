@@ -18,6 +18,7 @@
 	// Any ID
 	else{
 		$rows = $BD->from($element)
+			->where(array('STATUS' => 'NOK'))
 			->select()
 			->many();
 
