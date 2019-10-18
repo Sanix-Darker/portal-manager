@@ -1,6 +1,13 @@
-from portalSDK import portalSDK
 import time
 from data_for_test import data_for_test
+
+from os import path as ospath
+from sys import path as syspath
+# moving the path outside of the current dir
+syspath.insert(1, ospath.join(syspath[0], '..'))
+
+from portalSDK import portalSDK
+
 
 # We set the Token
 TOKEN ="2nSftf0JYKAQ52qz6RLRfoWmPqiSPmnRFI4C3fOiMZ7RKE5LVOcv1Eb7QWLOqQikrh2cZX_zZgQJxKgbIDHGjY4Ko4LDex1vqyNu";
@@ -20,7 +27,6 @@ pSDK = portalSDK(API, TOKEN, DEBUG=False)
 #|____/_/   \_\____/ \____|___|_| \_|\____|
 #-------------------------------------------
 #
-
 
 for student in data_for_test:
     print("-----------------------------------------")

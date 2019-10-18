@@ -25,7 +25,10 @@
 		  if (!is_int($key))
 		    $output[$key]=$rows[$key];
 
-		$result['status'] = 'success';
+		$result['status'] = 'error';
+		if(sizeof($output) > 0)
+			$result['status'] = 'success';
+
 		$result['output'] = $output;
 
 	}else{

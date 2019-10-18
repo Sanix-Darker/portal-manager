@@ -1,3 +1,8 @@
+from os import path as ospath
+from sys import path as syspath
+# moving the path outside of the current dir
+syspath.insert(1, ospath.join(syspath[0], '..'))
+
 from portalSDK import portalSDK
 
 # We set the Token
@@ -9,32 +14,6 @@ API = "http://127.0.0.1:80/php/portal/api/";
 #? Put True to see portalSDK logs or False to hide them
 #? As default is False
 pSDK = portalSDK(API, TOKEN, DEBUG=False)
-
-#
-#-------------------------------------------
-#| __ )  / \  |  _ \ / ___|_ _| \ | |/ ___|
-#|  _ \ / _ \ | | | | |  _ | ||  \| | |  _
-#| |_) / ___ \| |_| | |_| || || |\  | |_| |
-#|____/_/   \_\____/ \____|___|_| \_|\____|
-#-------------------------------------------
-#
-
-# TO send a Badging to the server :
-# We set the matricule
-matricule = "ISTDI12E004428"
-# We set the status
-status = "OK"
-# We set the student_info
-student_info = {
-    "nom": "sanix",
-    "prenom": "darker",
-    "level": "License Management"
-}
-# We send the badging and get the response in badging_response
-pSDK.send_badging(matricule, status, student_info)
-
-
-
 
 #
 #-----------------------------------------------------
@@ -51,7 +30,6 @@ pSDK.send_badging(matricule, status, student_info)
 command_list = pSDK.get_commands()
 for index, command in enumerate(command_list):
     print(str(index+1)+"-) "+ str(command))
-
 
 
 # - TO Update the status of a specific command

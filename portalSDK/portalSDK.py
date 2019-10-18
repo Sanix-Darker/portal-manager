@@ -111,3 +111,44 @@ class portalSDK:
         self.logg("[+] Response : "+str(response))
 
         return json.loads(str(response))["result"]
+
+
+
+    def send_command_status(self, status, command_address):
+        """[summary]
+
+        Arguments:
+            status {[type]} -- [description]
+            command_address {[type]} -- [description]
+
+        Returns:
+            [type] -- [description]
+        """
+        data_to_send = {
+            "status": status,
+            "address": command_address
+        }
+        update_command_status_link = self.API+"?page=command&token="+self.TOKEN+"&cible=update"
+        response = self.req(update_command_status_link, "post", data_to_send)
+        self.logg("[+] Response : "+str(response))
+
+        return json.loads(str(response))
+
+    def update_command_status(self, status, command_address):
+        """[summary]
+
+        Arguments:
+            status {[type]} -- [description]
+            command_address {[type]} -- [description]
+        """
+        print("-------------------------------------------------------")
+        print("--      UPDATE COMMAND STATUS PROCESS STARTED ---------")
+        print("-------------------------------------------------------")
+        update_response = self.send_command_status(status, command_address)
+
+        # We print the padging response
+        if update_response["status"] == "success":
+            print("[+] Update of the command status done successfully!")
+            print("[+] > "+str(update_response["output"]))
+        else:
+            print("Problem on Update of the command status!")

@@ -76,6 +76,20 @@ This is an output example :
 3-) {'COMMAND_ID': '7', 'TODO': 'activate', 'ADDRESS': '123.45.67.211', 'STATUS': 'OK', 'DATE_': '2019-10-17 17:07:25'}
 ```
 
+## TO TEST
+
+You can run theese command for testing:
+```shell
+cd tests
+# A complete implementation is available on ./example.py
+# python example.py
+
+# To test Badging system
+python test_badging.py
+
+# To test commands interaction system
+python test_badging.py
+```
 ## Author
 
 - Sanix-darker
