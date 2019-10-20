@@ -1,10 +1,105 @@
 <html>
     <head>
+        <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
     </head>
     <body>
+    <br>
+    <center>
         <br>
-        <h2>BADGING PROCESS : </h2>
-        <div id="result"></div>
+        <h1><: PORTAL :></h1>
+    </center>
+
+      <div class="bs-example container" data-example-id="striped-table">
+        <h2>COMMAND BOARD</h2>
+        <table style="width:100%;">
+            <tr>
+                <td style="width:25%;">
+                    <form>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Portal address</label>
+                                <input type="email" class="form-control" id="address" aria-describedby="emailHelp" placeholder="Enter The address of the portal">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Command</label>
+                                <select class="form-control" id="todo">
+                                    <option>activate</option>
+                                    <option>deactivate</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                </td>
+                <td style="width:3%;"></td>
+                <td style="vertical-align: top;">
+                    <table class="table table-striped table-bordered table-hover">
+                        <caption>
+                            Command list
+                            <span style="float:right">
+                                <b>Auto-refresh</b>
+                                <select id="command_refresh">
+                                    <option selected >activated</option>
+                                    <option>deactivated</option>
+                                </select>
+                            </span>
+                        </caption>
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>COMMAND_ID</th>
+                                <th>PORTAL_ADDRESS</th>
+                                <th>TODO</th>
+                                <th>STATUS</th>
+                                <th>DATE</th>
+                            </tr>
+                        </thead>
+                        <tbody id="result_command">
+                            <tr>
+                                <td colspan="6">
+                                    <center>Loading...</center>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </table>
+
+        <hr>
+
+        <h2>BADGING QUEUE</h2>
+        <table class="table table-striped table-bordered table-hover">
+          <caption>
+              Badging process list
+              <span style="float:right">
+                    <b>Auto-refresh</b>
+                    <select id="badging_refresh">
+                        <option selected >activated</option>
+                        <option>deactivated</option>
+                    </select>
+                </span>
+            </caption>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>BADGING_ID</th>
+              <th>MATRICULE</th>
+              <th>INFO</th>
+              <th>STATUS</th>
+              <th>DATE</th>
+            </tr>
+          </thead>
+          <tbody id="result">
+            <tr>
+                <td colspan="6">
+                    <center>Loading...</center>
+                </td>
+            </tr>
+          </tbody>
+          <tfoot>
+          <tr class="note"><th>Portal</th><td colspan=5><a href="">Real time refreshing</a></td></tr>
+          </tfoot>
+        </table>
+
         <script src="./index.js"></script>
     </body>
 </html>

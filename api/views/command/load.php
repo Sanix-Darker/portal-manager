@@ -17,10 +17,17 @@
 	}
 	// Any ID
 	else{
-		$rows = $BD->from($element)
+		if(isset($_REQUEST['type']) && $_REQUEST['type']='all'){
+
+			$rows = $BD->from($element)
+			->select()
+			->many();
+		}else{
+			$rows = $BD->from($element)
 			->where(array('STATUS' => 'NOK'))
 			->select()
 			->many();
+		}
 
 		for ($i=0; $i < sizeof($rows); $i++)
 			$output[]=$rows[$i];

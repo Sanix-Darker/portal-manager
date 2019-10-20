@@ -33,12 +33,12 @@ for index, command in enumerate(command_list):
     print(str(index+1)+"-) "+ str(command))
 
 
-#
-# - TO Update the status of a specific command
-#
-# We set the address of the portal
-command_address = "72.45.67.87"
-# We set the status
-status = "OK"
-# We update the status in the API
-pSDK.update_command_status(status, command_address)
+# #
+# # - TO Update the status of a specific command
+# #
+# # We set the address of the portal
+# command_address = "72.45.67.87"
+# # We set the status
+# status = "OK"
+# # We update the status in the API
+# pSDK.update_command_status(status, command_address)
