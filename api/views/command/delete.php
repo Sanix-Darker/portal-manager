@@ -4,6 +4,7 @@
 	$output = array();
 	if(isset($_REQUEST['command_address'])){
 
+		echo $_REQUEST['command_address'];
 		// Suppression
 		$BD->from($element)
 		    ->where(array('ADDRESS' => $_REQUEST['command_address']))

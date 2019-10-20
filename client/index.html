@@ -3,11 +3,11 @@
         <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
     </head>
     <body>
-    <br>
-    <center>
         <br>
-        <h1><: PORTAL :></h1>
-    </center>
+        <center>
+            <br>
+            <h1><: PORTAL :></h1>
+        </center>
 
       <div class="bs-example container" data-example-id="striped-table">
         <h2>COMMAND BOARD</h2>
@@ -22,16 +22,19 @@
                             <div class="form-group">
                                 <label for="exampleInputPassword1">Command</label>
                                 <select class="form-control" id="todo">
-                                    <option>activate</option>
-                                    <option>deactivate</option>
+                                    <option disabled="" selected value="">Choose the action</option>
+                                    <option value="OK">activate</option>
+                                    <option value="NOK">deactivate</option>
                                 </select>
                             </div>
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="button" class="btn btn-primary" style="width:100%;" onclick="send_command()">Send</button><br><br>
+                            <button type="button" class="btn btn-danger" style="width:49%;" onclick="delete_command()">Delete</button>
+                            <button type="button" class="btn btn-warning" style="width:49%;" onclick="reset_command_form()">Reset</button>
                         </form>
                 </td>
                 <td style="width:3%;"></td>
                 <td style="vertical-align: top;">
-                    <table class="table table-striped table-bordered table-hover">
+                    <table class="table table-striped table-bordered table-hover" style="box-shadow:0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19) !important;">
                         <caption>
                             Command list
                             <span style="float:right">
@@ -55,10 +58,13 @@
                         <tbody id="result_command">
                             <tr>
                                 <td colspan="6">
-                                    <center>Loading...</center>
+                                    <center>Nothing to show...</center>
                                 </td>
                             </tr>
                         </tbody>
+                        <tfoot>
+                            <tr class="note"><th>Portal</th><td colspan=5><a href="">Real time refreshing</a></td></tr>
+                        </tfoot>
                     </table>
                 </td>
             </tr>
@@ -67,7 +73,7 @@
         <hr>
 
         <h2>BADGING QUEUE</h2>
-        <table class="table table-striped table-bordered table-hover">
+        <table class="table table-striped table-bordered table-hover" style="box-shadow:0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19) !important;">
           <caption>
               Badging process list
               <span style="float:right">
@@ -91,7 +97,7 @@
           <tbody id="result">
             <tr>
                 <td colspan="6">
-                    <center>Loading...</center>
+                    <center>Nothing to show...</center>
                 </td>
             </tr>
           </tbody>

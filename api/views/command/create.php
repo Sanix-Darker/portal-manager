@@ -8,16 +8,19 @@
 		$data["ADDRESS"] = $json->address;
 		$data["STATUS"] = "NOK";
 
-		// We delete because we don't want 2 command at the same time for the same address
-		$BD->from($element)
-		    ->where(array('ADDRESS' => $data["ADDRESS"]))
-		    ->delete()
-		    ->execute();
+		// On check d'abord si xa existe
 
-		// Insertion
-		$BD->from($element)
-		    ->insert($data)
-		    ->execute();
+		// Si Non on creait
+		$rows = $BD->from($element)
+			->where($where)
+			->select()
+			->one();
+		if(sizeof($rows) == 0){
+			// Insertion
+			$BD->from($element)
+				->insert($data)
+				->execute();
+		}
 
 		$rows = $BD->from($element)
 			->where(array($element.'_id' => $BD->insert_id))
