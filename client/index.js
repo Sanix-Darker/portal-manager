@@ -32,7 +32,7 @@ function command_template(results){
         to_render += "<th scope='row'>"+counter+"</th>";
         to_render += "<td>"+element["COMMAND_ID"]+"</th>";
         to_render += "<td>"+element["ADDRESS"]+"</th>";
-        to_render += "<td style='color:white;font-weight: bold;background:"+((element["TODO"] == 'activate')?"green":"red")+"'>"+element["TODO"]+"</td>";
+        to_render += "<td style='color:white;font-weight: bold;background:"+((element["TODO"] == 'activate')?"green":"red")+"'>"+((element["TODO"] == 'activate')?"OPEN":"CLOSE")+"</td>";
         to_render += "<td style='"+((element["STATUS"] !== 'OK')?"color:white;background:black;":"color:black;background:white;")+"'>"+((element["STATUS"] == 'OK')?"DONE":"IN PROGRESS...")+"</td>";
         to_render += "<td>"+element["DATE_"]+"</td>";
         to_render += "<tr>";

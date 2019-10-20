@@ -61,7 +61,7 @@ for index, command in enumerate(command_list):
 # - TO Update the status of a specific command
 #
 # We set the address of the portal
-command_address = "72.45.67.87"
+command_address = "92.245.12.78"
 # We set the status
 status = "OK"
 # We update the status in the API

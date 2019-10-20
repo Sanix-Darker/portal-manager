@@ -18,6 +18,7 @@
 	// Any ID
 	else{
 		$rows = $BD->from($element)
+			->sortDesc('BADGING_ID')
 			->select()
 			->many();
 
